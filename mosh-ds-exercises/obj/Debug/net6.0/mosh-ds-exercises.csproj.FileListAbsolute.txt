@@ -1,0 +1,15 @@
+/Users/gilbertrosario/Documents/mosh-ds-exercises/mosh-ds-exercises/bin/Debug/net6.0/mosh-ds-exercises
+/Users/gilbertrosario/Documents/mosh-ds-exercises/mosh-ds-exercises/bin/Debug/net6.0/mosh-ds-exercises.deps.json
+/Users/gilbertrosario/Documents/mosh-ds-exercises/mosh-ds-exercises/bin/Debug/net6.0/mosh-ds-exercises.runtimeconfig.json
+/Users/gilbertrosario/Documents/mosh-ds-exercises/mosh-ds-exercises/bin/Debug/net6.0/mosh-ds-exercises.dll
+/Users/gilbertrosario/Documents/mosh-ds-exercises/mosh-ds-exercises/bin/Debug/net6.0/ref/mosh-ds-exercises.dll
+/Users/gilbertrosario/Documents/mosh-ds-exercises/mosh-ds-exercises/bin/Debug/net6.0/mosh-ds-exercises.pdb
+/Users/gilbertrosario/Documents/mosh-ds-exercises/mosh-ds-exercises/obj/Debug/net6.0/mosh-ds-exercises.csproj.AssemblyReference.cache
+/Users/gilbertrosario/Documents/mosh-ds-exercises/mosh-ds-exercises/obj/Debug/net6.0/mosh-ds-exercises.GeneratedMSBuildEditorConfig.editorconfig
+/Users/gilbertrosario/Documents/mosh-ds-exercises/mosh-ds-exercises/obj/Debug/net6.0/mosh-ds-exercises.AssemblyInfoInputs.cache
+/Users/gilbertrosario/Documents/mosh-ds-exercises/mosh-ds-exercises/obj/Debug/net6.0/mosh-ds-exercises.AssemblyInfo.cs
+/Users/gilbertrosario/Documents/mosh-ds-exercises/mosh-ds-exercises/obj/Debug/net6.0/mosh-ds-exercises.csproj.CoreCompileInputs.cache
+/Users/gilbertrosario/Documents/mosh-ds-exercises/mosh-ds-exercises/obj/Debug/net6.0/mosh-ds-exercises.dll
+/Users/gilbertrosario/Documents/mosh-ds-exercises/mosh-ds-exercises/obj/Debug/net6.0/ref/mosh-ds-exercises.dll
+/Users/gilbertrosario/Documents/mosh-ds-exercises/mosh-ds-exercises/obj/Debug/net6.0/mosh-ds-exercises.pdb
+/Users/gilbertrosario/Documents/mosh-ds-exercises/mosh-ds-exercises/obj/Debug/net6.0/mosh-ds-exercises.genruntimeconfig.cache
