@@ -1,13 +1,16 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
 using Array = mosh_ds_exercises.Array;
+using LinkedList = mosh_ds_exercises.LinkedList;
 
-var arr = new Array(3);
-arr.Insert(1);
-arr.Insert(2);
-arr.Insert(4);
-// arr.Insert(4);
+var list = new LinkedList();
 
+for (var i = 3; i <= 5; i++)
+{
+    list.AddLast(i);
+}
+list.AddFirst(2);
+list.AddFirst(1);
 
-arr.InsertAt(3, 2); // 1,3,2,4
-arr.PrintItems();
+list.PrintItems();
+Console.WriteLine(list.Contains(1));
