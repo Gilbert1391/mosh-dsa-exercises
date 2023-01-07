@@ -69,13 +69,53 @@ public class LinkedList
     {
         return IndexOf(value) >= 0;
     }
-    
-    public void DeleteFirst() {}
-    public void DeleteLast() {}
-    
 
+    public void RemoveFirst()
+    {
+        if (IsEmpty()) throw new Exception();
+        var prev = Head.Next;
+        Head = prev;
+        if (Head == null) Tail = null;
+    }
+
+    public void RemoveLast()
+    {
+        if (IsEmpty()) throw new Exception();
+        if (Head.Next == null)
+        {
+            Head = null;
+            Tail = null;
+            return;
+        }
+        var curr = Head;
+        while (curr != null && curr.Next != Tail)
+        {
+            curr = curr.Next;
+        }
+        curr.Next = null;
+        Tail = curr;
+    }
+
+    public int Size()
+    {
+        var count = 0;
+        var curr = Head;
+        while (curr != null)
+        {
+            curr = curr.Next;
+            count++;
+        }
+
+        return count;
+    }
     public void PrintItems()
     {
+        if (IsEmpty())
+        {
+            Console.WriteLine("Empty");
+            return;
+        }
+        
         Console.WriteLine($"Head: {Head.Value}");
         Console.WriteLine($"Tail: {Tail.Value}");
         
