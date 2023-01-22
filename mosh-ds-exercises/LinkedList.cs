@@ -6,15 +6,16 @@ public class LinkedList
     private class Node
     {
         public readonly int Value;
+        public Node Next { get; set; }
         public Node(int value)
         {
             Value = value;
         }
-        public Node Next { get; set; }
     }
     
     private Node Head { get; set; }
     private Node Tail { get; set; }
+    private int Count { get; set; }
 
     private bool IsEmpty()
     {
@@ -35,6 +36,8 @@ public class LinkedList
             node.Next = Head;
             Head = node;
         }
+
+        Count += 1;
     }
 
     public void AddLast(int item)
@@ -50,6 +53,7 @@ public class LinkedList
             Tail.Next = node;
             Tail = node;
         }
+        Count += 1;
     }
     
     public int IndexOf(int item)
@@ -76,6 +80,7 @@ public class LinkedList
         var prev = Head.Next;
         Head = prev;
         if (Head == null) Tail = null;
+        Count -= 1;
     }
 
     public void RemoveLast()
@@ -85,6 +90,7 @@ public class LinkedList
         {
             Head = null;
             Tail = null;
+            Count -= 1;
             return;
         }
         var curr = Head;
@@ -94,19 +100,63 @@ public class LinkedList
         }
         curr.Next = null;
         Tail = curr;
+        Count -= 1;
     }
 
     public int Size()
     {
-        var count = 0;
+        return Count;
+    }
+
+    public void Reverse()
+    {
+        if (IsEmpty()) return;
+        
+        var curr = Head;
+        var arr = new int[Count];
+        var counter = 0;
+        while (curr != null)
+        {
+            arr[counter] = curr.Value;
+            curr = curr.Next;
+            counter++;
+            RemoveFirst();
+        }
+        for (int i = 0; i < arr.Length; i++)
+        {
+            AddFirst(arr[i]);
+        }
+    }
+
+    public void ReverseInPlace()
+    {
+        Node prev = null;
+        var curr = Head;
+        Tail = curr;
+        while (curr != null)
+        {
+            var next = curr.Next;
+            curr.Next = prev;
+            prev = curr;
+            curr = next;
+        }
+        Head = prev;
+    }
+
+    public int GetKthNodeFromTheEnd(int k)
+    {
+        if (IsEmpty()) throw new Exception();
+            
+        var counter = Count;
         var curr = Head;
         while (curr != null)
         {
+            if (counter == k) return curr.Value;
+            counter--;
             curr = curr.Next;
-            count++;
         }
 
-        return count;
+        return -1;
     }
     public void PrintItems()
     {

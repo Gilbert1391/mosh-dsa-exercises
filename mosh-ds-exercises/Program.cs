@@ -5,17 +5,10 @@ using LinkedList = mosh_ds_exercises.LinkedList;
 
 var list = new LinkedList();
 
-for (var i = 1; i <= 3; i++)
+for (var i = 1; i <= 5; i++)
 {
-    list.AddLast(i);
+    list.AddLast(i + (9*i));
 }
-
-Console.WriteLine(list.Size());
-list.RemoveFirst();
-list.RemoveFirst();
-list.RemoveFirst();
-Console.WriteLine(list.Size());
-
-//list.PrintItems();
-
+list.ReverseInPlace();
+list.PrintItems();
 
