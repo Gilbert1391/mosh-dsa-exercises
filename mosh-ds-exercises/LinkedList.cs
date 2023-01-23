@@ -158,6 +158,41 @@ public class LinkedList
 
         return -1;
     }
+
+    public void PrintListMedian()
+    {
+        if (Head == null) throw new Exception();
+        var curr = Head;
+        var next = curr.Next;
+        if (next == null)
+        {
+            Console.WriteLine(curr.Value);
+        }
+        else
+        {
+            var counter = 0;
+            var items = new Dictionary<int, Node>();
+            while (curr != null)
+            {
+                counter++;
+                items.Add(counter, curr);
+                curr = next;
+                next = next?.Next;
+            }
+            //check if the number is even
+            if (counter % 2 == 0)
+            {
+                var firstMedian = counter / 2;
+                var secondMedian = (counter / 2) + 1;
+                Console.WriteLine($"{items[firstMedian].Value},{items[secondMedian].Value}");
+            }
+            else
+            {
+                var median = (counter + 1) / 2;
+                Console.WriteLine(items[median].Value);
+            }
+        }
+    }
     public void PrintItems()
     {
         if (IsEmpty())

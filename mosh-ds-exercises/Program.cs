@@ -5,10 +5,13 @@ using LinkedList = mosh_ds_exercises.LinkedList;
 
 var list = new LinkedList();
 
-for (var i = 1; i <= 5; i++)
+for (var i = 1; i <= 6; i++)
 {
-    list.AddLast(i + (9*i));
+    list.AddLast(i);
+    //list.AddLast(i + (9*i));
 }
-list.ReverseInPlace();
+
 list.PrintItems();
+Console.WriteLine("======");
+list.PrintListMedian();
 
