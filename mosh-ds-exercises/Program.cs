@@ -3,7 +3,14 @@
 using mosh_ds_exercises;
 using Array = mosh_ds_exercises.Array;
 using LinkedList = mosh_ds_exercises.LinkedList;
+using Stack = mosh_ds_exercises.Stack;
 
-var str = "(([1] + <2>))[a]";
-var result = StringHelper.IsExpressionBalanced(str);
-Console.WriteLine(result);
+var stack = new Stack();
+stack.Push(10);
+stack.Push(20);
+stack.Push(30);
+
+stack.Pop();
+stack.Pop();
+
+Console.WriteLine(stack.Peek());
