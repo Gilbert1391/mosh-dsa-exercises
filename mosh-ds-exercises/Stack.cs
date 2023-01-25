@@ -3,56 +3,33 @@ namespace mosh_ds_exercises;
 public class Stack
 {
     private int _size { get; set; }
-    private int[] _stack { get; set; } = new int[1];
+    private static readonly int _max = 5;
+    private int[] _stack { get; set; } = new int[_max];
 
     public bool IsEmpty()
     {
         return _size == 0;
     }
 
-    public void Push(int item)
+    public void Push(int item) 
     {
-        if (IsEmpty())
-        {
-            _size++;
-            _stack[0] = item;
-        }
-        else
-        {
-            _size++;
-            var arr = new int[_size];
-            arr[0] = item;
-            for (int i = 0; i < _stack.Length; i++)
-            {
-                arr[i + 1] = _stack[i];
-            }
-            _stack = arr;
-        }
+        if (_size >= _max) throw new Exception("Stack overflow");
+        _stack[_size++] = item;
     }
 
-    public void Pop() 
+    public int Pop() 
     {
-        if (IsEmpty()) throw new Exception();
-        
+        if (IsEmpty()) throw new Exception("Stack underflow");
         _size--;
-        var arr = new int[_size];
-        if (_stack.Length == 1)
-        {
-            _stack = arr;
-        }
-        else
-        { 
-            for (int i = 1; i < _stack.Length; i++)
-            {
-                arr[i - 1] = _stack[i];
-            }
-            _stack = arr;
-        }
+        var item = _stack[_size];
+        _stack[_size] = 0;
+        return item;
     }
 
     public int Peek()
     {
-        if (IsEmpty()) throw new Exception();
-        return _stack[0];
+        if (IsEmpty()) throw new Exception("Stack underflow");
+        _size--;
+        return _stack[_size];
     }
 }

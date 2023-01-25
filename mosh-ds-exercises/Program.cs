@@ -9,8 +9,8 @@ var stack = new Stack();
 stack.Push(10);
 stack.Push(20);
 stack.Push(30);
+stack.Push(40);
+stack.Push(40);
+stack.Push(60);
 
-stack.Pop();
-stack.Pop();
-
-Console.WriteLine(stack.Peek());
+// Console.WriteLine(stack.Peek());
