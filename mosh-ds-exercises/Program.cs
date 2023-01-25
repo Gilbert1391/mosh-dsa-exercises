@@ -4,13 +4,15 @@ using mosh_ds_exercises;
 using Array = mosh_ds_exercises.Array;
 using LinkedList = mosh_ds_exercises.LinkedList;
 using Stack = mosh_ds_exercises.Stack;
+using Queue = mosh_ds_exercises.ArrayQueue;
 
-var stack = new Stack();
-stack.Push(10);
-stack.Push(20);
-stack.Push(30);
-stack.Push(40);
-stack.Push(40);
-stack.Push(60);
+var queue = new Queue();
+queue.Enqueue(1);
+queue.Enqueue(2);
+queue.Enqueue(3);
+queue.Enqueue(4);
+queue.Enqueue(5);
 
-// Console.WriteLine(stack.Peek());
+queue.DeQueue();
+
+Console.WriteLine(queue.Peek());
