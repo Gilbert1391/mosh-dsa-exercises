@@ -2,34 +2,39 @@ namespace mosh_ds_exercises;
 
 public class Stack
 {
-    private int _size { get; set; }
-    private static readonly int _max = 5;
-    private int[] _stack { get; set; } = new int[_max];
+    public Stack(int size)
+    {
+        _size = size;
+        _stack = new int[size];
+    }
+    private int _count { get; set; }
+    private readonly int _size;
+    private int[] _stack { get; set; }
 
     public bool IsEmpty()
     {
-        return _size == 0;
+        return _count == 0;
     }
 
     public void Push(int item) 
     {
-        if (_size >= _max) throw new Exception("Stack overflow");
-        _stack[_size++] = item;
+        if (_count >= _size) throw new Exception("Stack overflow");
+        _stack[_count++] = item;
     }
 
     public int Pop() 
     {
         if (IsEmpty()) throw new Exception("Stack underflow");
-        _size--;
-        var item = _stack[_size];
-        _stack[_size] = 0;
+        _count--;
+        var item = _stack[_count];
+        _stack[_count] = 0;
         return item;
     }
 
     public int Peek()
     {
         if (IsEmpty()) throw new Exception("Stack underflow");
-        _size--;
-        return _stack[_size];
+        _count--;
+        return _stack[_count];
     }
 }
