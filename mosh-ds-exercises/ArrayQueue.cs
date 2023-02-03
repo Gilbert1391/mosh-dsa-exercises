@@ -50,15 +50,22 @@ public class ArrayQueue
         return _count >= _size;
     }
     
-    public void Reverse()
+    public void Reverse(int k)
     {
-        // var stack = new Stack();
-        //
-        // while (queue.Count > 0)
-        //     stack.Push(queue.Dequeue());
-        //
-        // while (!stack.IsEmpty())
-        //     queue.Enqueue(stack.Pop());
+        if (IsEmpty()) return;
+        
+        mosh_ds_exercises.Stack stack = new Stack(k);
+        for (int i = 0; i < k; i++)
+        {
+            stack.Push(_queue[i]);
+        }
+
+        var idx = 0;
+        while (!stack.IsEmpty())
+        {
+            _queue[idx] = stack.Pop();
+            idx++;
+        }
         
     }
 }
