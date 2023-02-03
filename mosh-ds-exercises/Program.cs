@@ -4,20 +4,20 @@ using mosh_ds_exercises;
 using Array = mosh_ds_exercises.Array;
 using LinkedList = mosh_ds_exercises.LinkedList;
 using Stack = mosh_ds_exercises.Stack;
-using Queue = mosh_ds_exercises.ArrayQueue;
+//using Queue = mosh_ds_exercises.ArrayQueue;
 // using StackQueue = mosh_ds_exercises.StackQueue;
 //using priorityQueue = mosh_ds_exercises.ArrayPriorityQueue;
+using Queue = mosh_ds_exercises.LinkedListQueue;
 
 
+var queue = new Queue(3);
+queue.Enqueue(1);
+queue.Enqueue(2);
+queue.Enqueue(3);
 
-var queue = new Queue(5);
-queue.Enqueue(10);
-queue.Enqueue(20);
-queue.Enqueue(30);
-queue.Enqueue(40);
-queue.Enqueue(50);
-queue.Reverse(3);
 
-Console.WriteLine(queue.DeQueue());
-Console.WriteLine(queue.DeQueue());
-Console.WriteLine(queue.DeQueue());
+Console.WriteLine(queue.Dequeue());
+Console.WriteLine(queue.Dequeue());
+queue.Enqueue(4);
+Console.WriteLine(queue.Dequeue());
+Console.WriteLine(queue.Dequeue());
