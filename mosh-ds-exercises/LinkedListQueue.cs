@@ -30,7 +30,6 @@ public class LinkedListQueue
         }
         else
         {
-            // 1 -> 2
             var curr = Head;
             while (curr.Next != null)
             {
