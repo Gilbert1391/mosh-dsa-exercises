@@ -7,17 +7,12 @@ using Stack = mosh_ds_exercises.Stack;
 //using Queue = mosh_ds_exercises.ArrayQueue;
 // using StackQueue = mosh_ds_exercises.StackQueue;
 //using priorityQueue = mosh_ds_exercises.ArrayPriorityQueue;
-using Queue = mosh_ds_exercises.LinkedListQueue;
+///using Queue = mosh_ds_exercises.LinkedListQueue;
 
 
-var queue = new Queue(3);
-queue.Enqueue(1);
-queue.Enqueue(2);
-queue.Enqueue(3);
-
-
-Console.WriteLine(queue.Dequeue());
-Console.WriteLine(queue.Dequeue());
-queue.Enqueue(4);
-Console.WriteLine(queue.Dequeue());
-Console.WriteLine(queue.Dequeue());
+var s1 = "a green apple";
+var s2 = "superman";
+var s3 = "i dont know what you are talking about dick!";
+var s4 = "livinia";
+var result = StringHelper.FindFirstNonRepeatedChar(s1);
+Console.WriteLine(result);

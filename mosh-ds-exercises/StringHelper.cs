@@ -22,6 +22,41 @@ public class StringHelper
                return brackets;
           }
      }
+
+     public static char? FindFirstRepeatedChar(string input)
+     {
+          if (string.IsNullOrEmpty(input)) return null;
+
+          var charsFrequency = new HashSet<char>();
+
+          foreach (var key in input)
+          {
+               if (charsFrequency.Contains(key)) return key;
+               charsFrequency.Add(key);
+          }
+
+          return null;
+     }
+     
+     public static char? FindFirstNonRepeatedChar(string input)
+     {
+          if (string.IsNullOrEmpty(input)) return null;
+          
+          var charsFrequency = new Dictionary<char, int>();
+
+          foreach (var key in input)
+          {
+               if (charsFrequency.ContainsKey(key)) ++charsFrequency[key];
+               else charsFrequency.Add(key, 1);
+          }
+
+          foreach (var key in input)
+          {
+               if (charsFrequency[key] == 1) return key;
+          }
+
+          return null;
+     }
      public static string Reverse(string input)
      {
           if (string.IsNullOrEmpty(input)) return "";
