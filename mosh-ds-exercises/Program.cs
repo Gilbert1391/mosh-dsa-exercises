@@ -8,11 +8,17 @@ using Stack = mosh_ds_exercises.Stack;
 // using StackQueue = mosh_ds_exercises.StackQueue;
 //using priorityQueue = mosh_ds_exercises.ArrayPriorityQueue;
 ///using Queue = mosh_ds_exercises.LinkedListQueue;
+using HashTable = mosh_ds_exercises.HashTable;
 
+var hashtable = new HashTable(3);
 
-var s1 = "a green apple";
-var s2 = "superman";
-var s3 = "i dont know what you are talking about dick!";
-var s4 = "livinia";
-var result = StringHelper.FindFirstNonRepeatedChar(s1);
-Console.WriteLine(result);
+hashtable.Put(1, "John");
+hashtable.Put(3, "Dean");
+hashtable.Put(6, "Peter");
+hashtable.Put(2, "Mary");
+Console.WriteLine(hashtable.ContainsKey(2));
+
+var val = hashtable.Get(2);
+hashtable.Remove(2);
+Console.WriteLine(val);
+Console.WriteLine(hashtable.ContainsKey(2));
