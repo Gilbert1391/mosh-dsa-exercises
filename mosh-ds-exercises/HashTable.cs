@@ -2,6 +2,13 @@ namespace mosh_ds_exercises;
 
 public class HashTable
 {
+   
+    public HashTable(int size)
+    {
+        _size = size;
+        _table = new LinkedList<Entry>[size];
+    }
+    
     private class Entry
     {
         public int Key;
@@ -16,11 +23,6 @@ public class HashTable
     }
     private readonly int _size;
     private LinkedList<Entry>[] _table;
-    public HashTable(int size)
-    {
-        _size = size;
-        _table = new LinkedList<Entry>[size];
-    }
 
     private int GetHashedKey(int key)
     {
@@ -29,9 +31,6 @@ public class HashTable
 
     public void Put(int key, string value)
     {
-        // []
-        // [[{key: 3, value: 'Peter'}], [{key: 4, value: 'Flor'}, {key: 1, value: 'John'} ], [{key: 2, value: 'Dean'}]]
-
         var hashedKey = GetHashedKey(key);
         var entry = new Entry(key, value);
         if (_table[hashedKey] == null)
@@ -75,10 +74,8 @@ public class HashTable
         return result;
     }
 
-    public void Remove(int key) // key = 4 || 1 -> 1
+    public void Remove(int key) 
     {
-        // [[{key: 3, value: 'Peter'}], [{key: 4, value: 'Flor'}, {key: 1, value: 'John'} ], [{key: 2, value: 'Dean'}]]
-        //                                                              c
         if (!ContainsKey(key)) throw new Exception($"{key} not found");
 
         var hashedKey = GetHashedKey(key);
@@ -94,7 +91,7 @@ public class HashTable
         }
     }
 
-    public bool ContainsKey(int key) // key = 4 || 1 -> 1
+    public bool ContainsKey(int key)
     {
         var hashedKey = GetHashedKey(key);
         var curr = _table[hashedKey].First;
@@ -104,5 +101,61 @@ public class HashTable
             curr = curr.Next;
         }
         return false;
+    }
+
+    public static int GetMostFrequent(int[] array)
+    {
+        if (array.Length == 0) throw new Exception();
+        
+       var table = new Dictionary<int, int>();
+        foreach (var t in array)
+        {
+            if (table.ContainsKey(t)) ++table[t];
+            else table.Add(t, 1);
+        }
+
+        var max = 0;
+        foreach (var entry in table)
+        {
+            if (entry.Value > max) max = entry.Value;
+        }
+        return max;
+    }
+
+    public static int CountUniquePairsWithDiff(int[] array, int k)
+    {
+        var set = new HashSet<int>();
+        for (int i = 0; i < array.Length; i++)
+        {
+            set.Add(array[i]);
+        }
+
+        var pairCount = 0;
+        foreach (var i in set)
+        {
+            foreach (var j in set)
+            {
+                if (i - j == k) pairCount++;
+            }
+        }
+
+        return pairCount;
+    }
+
+    public static int[] TwoSum(int[] array, int target)
+    {
+        var items = new Dictionary<int, int>();
+        for (int i = 0; i < array.Length; i++)
+        {
+            items.Add(array[i], i);
+        }
+        foreach (var i in items)
+        {
+            foreach (var j in items)
+            {
+                if (i.Key + j.Key == target) return new[] { i.Value, j.Value };
+            }
+        }
+        return System.Array.Empty<int>();
     }
 }
