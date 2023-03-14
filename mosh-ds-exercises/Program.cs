@@ -9,9 +9,9 @@ using Stack = mosh_ds_exercises.Stack;
 //using priorityQueue = mosh_ds_exercises.ArrayPriorityQueue;
 ///using Queue = mosh_ds_exercises.LinkedListQueue;
 // using HashTable = mosh_ds_exercises.HashTable;
-using BinaryTree = mosh_ds_exercises.BinaryStree;
+using BinaryTree = mosh_ds_exercises.BinarySearchTree;
 
-var tree = new BinaryTree();
+var tree = new BinarySearchTree();
 // tree.Insert(10);
 // tree.Insert(5);
 // tree.Insert(15);
@@ -26,7 +26,6 @@ tree.Insert(1);
 tree.Insert(8);
 tree.Insert(6);
 tree.Insert(10);
-var result = tree.Find(13);
-Console.WriteLine(result);
 
-//Console.WriteLine(result);
+var result = tree.Height();
+Console.WriteLine(result);

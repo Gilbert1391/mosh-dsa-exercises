@@ -1,6 +1,6 @@
 namespace mosh_ds_exercises;
 
-public class BinaryStree
+public class BinarySearchTree
 {
     private Node _root;
     private class Node
@@ -57,5 +57,57 @@ public class BinaryStree
             curr = value > curr.Value ? curr.Right : curr.Left;
         }
         return false;
+    }
+
+    public void DepthFirstPreOrderTraversal()
+    {
+        DepthFirstPreOrderTraversal(_root);
+    }
+
+    private void DepthFirstPreOrderTraversal(Node root)
+    {
+        if (root == null) return;
+        Console.WriteLine(root.Value);
+        DepthFirstPreOrderTraversal(root.Left);
+        DepthFirstPreOrderTraversal(root.Right);
+    }
+
+    public void DepthFirstInOrderTraversal()
+    {
+        DepthFirstInOrderTraversal(_root);
+    }
+
+    private void DepthFirstInOrderTraversal(Node root)
+    {
+        if (root == null) return;
+        DepthFirstInOrderTraversal(root.Left);
+        Console.WriteLine(root.Value);
+        DepthFirstInOrderTraversal(root.Right);
+
+    }
+    
+    public void DepthFirstPostOrderTraversal()
+    {
+        DepthFirstPostOrderTraversal(_root);
+    }
+
+    private void DepthFirstPostOrderTraversal(Node root)
+    {
+        if (root == null) return;
+        DepthFirstPostOrderTraversal(root.Left);
+        DepthFirstPostOrderTraversal(root.Right);
+        Console.WriteLine(root.Value);
+    }
+
+    public int Height()
+    {
+        return Height(_root);
+    }
+
+    private int Height(Node root)
+    {
+        if (root == null) return -1;
+        if (root.Left == null && root.Right == null) return 0;
+        return 1 + Math.Max(Height(root.Left), Height(root.Right));
     }
 }
