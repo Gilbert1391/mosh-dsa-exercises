@@ -110,4 +110,19 @@ public class BinarySearchTree
         if (root.Left == null && root.Right == null) return 0;
         return 1 + Math.Max(Height(root.Left), Height(root.Right));
     }
+
+    public bool Equals(BinarySearchTree tree)
+    {
+        if (tree == null) return false; 
+        return Equals(tree._root, _root);
+    }
+
+    private bool Equals(Node firstNode, Node secondNode)
+    {
+        if (firstNode == null && secondNode == null) return true;
+        if (firstNode?.Value != secondNode?.Value) return false;
+        var isLeftEqual = Equals(firstNode.Left, secondNode.Left);
+        var isRightEqual = Equals(firstNode.Right, secondNode.Right);
+        return isLeftEqual && isRightEqual;
+    }
 }

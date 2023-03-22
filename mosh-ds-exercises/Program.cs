@@ -12,6 +12,8 @@ using Stack = mosh_ds_exercises.Stack;
 using BinaryTree = mosh_ds_exercises.BinarySearchTree;
 
 var tree = new BinarySearchTree();
+var tree2 = new BinarySearchTree();
+
 // tree.Insert(10);
 // tree.Insert(5);
 // tree.Insert(15);
@@ -20,12 +22,20 @@ var tree = new BinarySearchTree();
 // tree.Insert(7);
 // tree.Insert(17);
 tree.Insert(7);
-tree.Insert(4);
+tree.Insert(3);
 tree.Insert(9);
 tree.Insert(1);
 tree.Insert(8);
 tree.Insert(6);
 tree.Insert(10);
 
-var result = tree.Height();
+tree2.Insert(7);
+tree2.Insert(3);
+tree2.Insert(9);
+tree2.Insert(1);
+tree2.Insert(8);
+tree2.Insert(6); 
+tree2.Insert(10);
+
+var result = tree.Equals(null);
 Console.WriteLine(result);
