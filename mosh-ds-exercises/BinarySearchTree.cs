@@ -1,4 +1,5 @@
 namespace mosh_ds_exercises;
+using System;
 
 public class BinarySearchTree
 {
@@ -124,5 +125,19 @@ public class BinarySearchTree
         var isLeftEqual = Equals(firstNode.Left, secondNode.Left);
         var isRightEqual = Equals(firstNode.Right, secondNode.Right);
         return isLeftEqual && isRightEqual;
+    }
+
+    public bool IsBinarySearchTree()
+    {
+        return IsBinarySearchTree(_root, Int32.MinValue, Int32.MaxValue);
+    }
+
+    private bool IsBinarySearchTree(Node node, int min, int max)
+    {
+        if (node == null) return true;
+        if (node.Value < min || node.Value > max) return false;
+        var isLeftValid = IsBinarySearchTree(node.Left, min, node.Value - 1);
+        var isRightValid = IsBinarySearchTree(node.Right, node.Value + 1, max);
+        return isLeftValid && isRightValid;
     }
 }
