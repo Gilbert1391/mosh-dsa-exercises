@@ -162,4 +162,18 @@ public class BinarySearchTree
         PrintNodesAtKDistance(root.Left, distance - 1, list);
         PrintNodesAtKDistance(root.Right, distance - 1, list);  
     }
+
+    public int CountLeaves()
+    {
+        if (_root == null) return 0;
+        return CountLeaves(_root);
+    }
+
+    private int CountLeaves(Node root)
+    {
+        if (root.Left == null || root.Right == null) return 1;
+        var leftResult = CountLeaves(root.Left);
+        var rightResult = CountLeaves(root.Right);
+        return leftResult + rightResult;
+    }
 }

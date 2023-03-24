@@ -21,6 +21,7 @@ var tree2 = new BinarySearchTree();
 // tree.Insert(13);
 // tree.Insert(7);
 // tree.Insert(17);
+
 tree.Insert(7);
 tree.Insert(4);
 tree.Insert(9);
@@ -30,7 +31,6 @@ tree.Insert(6);
 tree.Insert(10);
 tree.Insert(5);
 
-
 // tree2.Insert(7);
 // tree2.Insert(3);
 // tree2.Insert(9);
@@ -39,5 +39,5 @@ tree.Insert(5);
 // tree2.Insert(6); 
 // tree2.Insert(10);
 
-tree.PrintNodesAtKDistance(3);
-// Console.WriteLine(result);
+var result = tree.CountLeaves();
+Console.WriteLine(result);
