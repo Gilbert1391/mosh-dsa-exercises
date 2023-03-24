@@ -188,4 +188,19 @@ public class BinarySearchTree
         if (root.Right == null) return root.Value;
         return Max(root.Right);
     }
+
+    public bool AreSibling(int first, int second)
+    {
+        if (_root == null) throw new Exception("Tree is empty");
+        var max = Math.Max(first, second);
+        var min = Math.Min(first, second);
+        return AreSibling(_root, min, max);
+    }
+
+    private bool AreSibling(Node root, int leftVal, int rightVal)
+    {
+        if (root.Left == null || root.Right == null) return false;
+        if (root.Left.Value == leftVal && root.Right.Value == rightVal) return true;
+        return AreSibling(root.Left, leftVal, rightVal) || AreSibling(root.Right, leftVal, rightVal);
+    }
 }

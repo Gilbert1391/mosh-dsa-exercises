@@ -40,5 +40,5 @@ tree.Insert(5);
 // tree2.Insert(6); 
 // tree2.Insert(10);
 
-var result = tree.Max();
+var result = tree.AreSibling(10,8);
 Console.WriteLine(result);
