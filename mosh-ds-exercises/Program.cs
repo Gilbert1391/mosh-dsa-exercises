@@ -30,6 +30,7 @@ tree.Insert(8);
 tree.Insert(6);
 tree.Insert(10);
 tree.Insert(5);
+// tree.Insert(11);
 
 // tree2.Insert(7);
 // tree2.Insert(3);
@@ -39,5 +40,5 @@ tree.Insert(5);
 // tree2.Insert(6); 
 // tree2.Insert(10);
 
-var result = tree.CountLeaves();
+var result = tree.Max();
 Console.WriteLine(result);

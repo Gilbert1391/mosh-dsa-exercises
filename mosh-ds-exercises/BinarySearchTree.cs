@@ -176,4 +176,16 @@ public class BinarySearchTree
         var rightResult = CountLeaves(root.Right);
         return leftResult + rightResult;
     }
+
+    public int Max()
+    {
+        if (_root == null) throw new Exception("Tree is empty");
+        return Max(_root);
+    }
+
+    private int Max(Node root)
+    {
+        if (root.Right == null) return root.Value;
+        return Max(root.Right);
+    }
 }
