@@ -28,6 +28,8 @@ tree.Insert(1);
 tree.Insert(8);
 tree.Insert(6);
 tree.Insert(10);
+tree.Insert(5);
+
 
 // tree2.Insert(7);
 // tree2.Insert(3);
@@ -37,5 +39,5 @@ tree.Insert(10);
 // tree2.Insert(6); 
 // tree2.Insert(10);
 
-var result = tree.IsBinarySearchTree();
-Console.WriteLine(result);
+tree.PrintNodesAtKDistance(3);
+// Console.WriteLine(result);

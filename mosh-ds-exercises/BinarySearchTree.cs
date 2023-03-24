@@ -140,4 +140,26 @@ public class BinarySearchTree
         var isRightValid = IsBinarySearchTree(node.Right, node.Value + 1, max);
         return isLeftValid && isRightValid;
     }
+
+    public void PrintNodesAtKDistance(int distance)
+    {
+        var nodes = new List<int>();
+        PrintNodesAtKDistance(_root, distance, nodes);
+        foreach (var n in nodes)
+        {
+         Console.WriteLine(n);   
+        }
+    }
+
+    private void PrintNodesAtKDistance(Node root, int distance, List<int> list)
+    {
+        if (root == null) return;
+        if (distance == 0 && root != null)
+        {
+            list.Add(root.Value);
+            return;
+        }
+        PrintNodesAtKDistance(root.Left, distance - 1, list);
+        PrintNodesAtKDistance(root.Right, distance - 1, list);  
+    }
 }
